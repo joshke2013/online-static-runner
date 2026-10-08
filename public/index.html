@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chromebook Local Runner</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="card">
+      <h1>Chromebook Local Runner</h1>
+      <p>Choose a static website folder. Files are saved in this browser and previewed from local browser storage.</p>
+
+      <label class="picker">
+        Select Folder
+        <input id="folderInput" type="file" webkitdirectory directory multiple>
+      </label>
+
+      <div class="buttons">
+        <button id="launchBtn" disabled>Launch</button>
+        <button id="replaceBtn">Replace Files</button>
+        <button id="clearBtn">Clear Local Files</button>
+      </div>
+
+      <div class="status">
+        <div>Status: <span id="statusText">Waiting for folder</span></div>
+        <div>Entry: <span id="entryText">index.html</span></div>
+        <div>Files: <span id="fileCount">0</span></div>
+      </div>
+
+      <details>
+        <summary>Loaded files</summary>
+        <pre id="fileList"></pre>
+      </details>
+    </section>
+
+    <section class="preview-card">
+      <div class="preview-bar">
+        <strong>Preview</strong>
+        <button id="openTabBtn" disabled>Open in New Tab</button>
+      </div>
+      <iframe id="preview" title="preview"></iframe>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
